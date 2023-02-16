@@ -9,10 +9,10 @@ return:
 - String (introduction word)
 
 ### User's current point
-**/currentPoint?username=____**
+**/currentPoint?userId=____**
 
 param:
-- username
+- userId
 
 return:
 - Double (the point of given username)
@@ -20,7 +20,7 @@ return:
 ### Leaderboard
 **/leaderboard?first=___&last=**
 
-E.g: 1-20
+E.g: 0-20 (**important: index start from 0!**)
 param:
 - first person
 - last person
@@ -35,7 +35,7 @@ return:
 ##  Awards list page
 ### List of awards
 
-**/awards**
+**/award/get**
 
 params:
 - choice
@@ -46,7 +46,7 @@ params:
   - 5: select awards by name descending order
   - 6: select awards by name ascending order
 - int first
-- int second
+- int last
 
 return:
 - List containing:
@@ -87,6 +87,9 @@ params:
 - Long userId
 - Long awardId
 - int count (how many of this award added?)
+- 
+return:
+- boolean (successful or not)
 
 ## Cart page
 ### Cart list

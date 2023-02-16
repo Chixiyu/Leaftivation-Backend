@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 @Service
 public class HomePageService {
     @Resource
-    HomePageMapper homePageMapper;
+    private HomePageMapper homePageMapper;
 
     public String getIntroduction(){
         return homePageMapper.selectIntroduction();

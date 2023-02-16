@@ -15,8 +15,8 @@ public class CartController {
     CartService cartService;
 
     @GetMapping("/cart/add")
-    public void addToCart(Long userId,Long awardId,int count){
-        cartService.addToCart(userId,awardId,count);
+    public boolean addToCart(Long userId,Long awardId,int count){
+        return cartService.addToCart(userId,awardId,count);
     }
 
     @GetMapping("/cart/getCart")
@@ -29,7 +29,7 @@ public class CartController {
         return cartService.getCartTotalPrice(userId);
     }
 
-    @GetMapping("/cart/purchacse")
+    @GetMapping("/cart/purchase")
     public String purchaseCart(Long userId){
         return cartService.purchaseCart(userId);
     }

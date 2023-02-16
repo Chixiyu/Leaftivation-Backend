@@ -17,7 +17,7 @@ public class PointsService {
     }
 
     public List<User> getLeaderboard(Long first, Long last){
-        return pointsMapper.selectLeaderboardFromFirstToLast(first,last);
+        return pointsMapper.selectLeaderboardFromFirstToLast(first,first+last);
     }
 
     public void reducePoint(Long userId,double reduction){

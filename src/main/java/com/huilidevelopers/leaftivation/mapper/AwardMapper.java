@@ -10,22 +10,22 @@ import java.util.List;
 @Mapper
 @Repository
 public interface AwardMapper {
-    @Select("select * from award order by upload_time desc limit #{first}, #{first+last}")
+    @Select("select * from award order by upload_time desc limit #{first}, #{last}")
     public List<Award> getAwardsByTimeDesc(int first, int last);
 
-    @Select("select * from award order by upload_time asc limit #{first}, #{first+last}")
+    @Select("select * from award order by upload_time asc limit #{first}, #{last}")
     public List<Award> getAwardsByTimeAsc(int first, int last);
 
-    @Select("select * from award order by price desc limit #{first}, #{first+last}")
+    @Select("select * from award order by price desc limit #{first}, #{last}")
     public List<Award> getAwardByPriceDesc(int first, int last);
 
-    @Select("select * from award order by price asc limit #{first}, #{first+last}")
+    @Select("select * from award order by price asc limit #{first}, #{last}")
     public List<Award> getAwardByPriceAsc(int first, int last);
 
-    @Select("select * from award order by name desc limit #{first}, #{first+last}")
+    @Select("select * from award order by name desc limit #{first}, #{last}")
     public List<Award> getAwardByNameDesc(int first, int last);
 
-    @Select("select * from award order by name asc limit #{first}, #{first+last}")
+    @Select("select * from award order by name asc limit #{first}, #{last}")
     public List<Award> getAwardByNameAsc(int first, int last);
 
     @Select("select * from award where id=#{id}")

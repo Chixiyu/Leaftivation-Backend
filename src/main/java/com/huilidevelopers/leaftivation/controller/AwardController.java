@@ -18,7 +18,7 @@ public class AwardController {
 
     @GetMapping("/award/get")
     public List<Award> getAwards(int choice, int first, int last){
-        return awardService.getAwards(choice,first,last);
+        return awardService.getAwards(choice,first,first+last);
     }
 
     @GetMapping("/award/select")

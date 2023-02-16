@@ -2,6 +2,7 @@ package com.huilidevelopers.leaftivation.service;
 
 import com.huilidevelopers.leaftivation.entity.CartAward;
 import com.huilidevelopers.leaftivation.mapper.CartMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -9,6 +10,7 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @Service
+@Slf4j
 public class CartService {
     @Resource
     CartMapper cartMapper;
@@ -16,8 +18,15 @@ public class CartService {
     @Resource
     PointsService pointsService;
 
-    public void addToCart(Long userId,Long awardId,int count){
-        cartMapper.addToCart(userId,awardId,count);
+    public boolean addToCart(Long userId,Long awardId,int count){
+        try{
+            cartMapper.addToCart(userId,awardId,count);
+            return true;
+        }
+        catch (Exception e){
+            log.error(e.getMessage());
+            return false;
+        }
     }
 
 

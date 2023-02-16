@@ -2,7 +2,6 @@ package com.huilidevelopers.leaftivation.controller;
 
 import com.huilidevelopers.leaftivation.entity.User;
 import com.huilidevelopers.leaftivation.service.PointsService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
