@@ -19,6 +19,9 @@ public class FtpUtil {
     @Value("${ftp.password}")
     private static String password;
 
+    @Value("ftp.server_address")
+    private static String ftpServerAddress;
+
     /**
      * util class for ftp upload
      *
@@ -31,9 +34,9 @@ public class FtpUtil {
             // local
 //            ftp.connect("172.18.0.2", 21);
             // remote
-            ftp.connect("igibgo.cc", 21);
+            ftp.connect(ftpServerAddress, 21);
             ftp.login(ftpUsername, password);
-            System.out.println("reply code: " + ftp.getReplyCode());
+            log.info("reply code: "+ ftp.getReplyCode());
             if (!FTPReply.isPositiveCompletion(ftp.getReplyCode())) {
                 log.error("FTP login failed");
             }

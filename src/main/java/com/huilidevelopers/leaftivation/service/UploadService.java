@@ -32,10 +32,9 @@ public class UploadService {
     private String filePath;
     public String savePicture(MultipartFile file,String userName) throws Exception {
         filePath+=userName;
-        String contentType=file.getContentType();
         String fileName=file.getOriginalFilename();
         FileUtil.uploadFile(file.getBytes(),filePath,fileName);
-        return filePath;
+        return filePath+fileName;
     }
 
     public void uploadPicture(Long logId, String picturePosition) {
